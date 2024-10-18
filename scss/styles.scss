@@ -1,0 +1,93 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$text-color:$secondary-color;
+$font-family: 'Roboto', sans-serif;
+
+@import 'buttons';
+@import 'header';
+@import 'products';
+
+
+
+@mixin button-style {
+    padding: 10px 20px;
+    background-color: $primary-color;
+    border: none;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+// Estilos para o header
+header {
+    background-color: #f1f1f1;
+    padding: 20px 0;
+
+    .branding {
+        img {
+            width: 120px;
+            height: 70px;
+        }
+    }
+
+    nav {
+        ul.menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: black;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Seção de produtos
+section {
+    .container {
+        h2 {
+            font-family: $font-family;
+            font-size: 24px;
+        }
+
+        ul.products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+
+            li.product-item {
+                border: 1px solid #e1e1e1;
+                padding: 10px;
+                text-align: center;
+
+                img {
+                    width: 180px;
+                    height: 180px;
+                }
+
+                h4 {
+                    margin: 10px 0;
+                    font-family: $font-family;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+
+                .product-button {
+                    @include button-style; // Aplicando o estilo do botão
+                }
+            }
+        }
+    }
+}

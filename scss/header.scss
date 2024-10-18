@@ -1,0 +1,30 @@
+header {
+    background-color: $primary-color;
+    padding: 20px;
+
+    .branding {
+        img {
+            width: 120px;
+            height: auto;
+        }
+    }
+
+    nav {
+        ul.menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+
+            li {
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
